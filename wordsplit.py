@@ -12,7 +12,7 @@ def get_wakati(text):
     return nmw.parse(text).strip()
 
 
-def get_words(text, pos_list=[], form="asitis"):
+def get_words(text, pos_list=[], form="asitis", stopwords=[]):
     word_list = []
     inflection_index = inflection(form)
     text = re.sub('[!-/:-@[-`{-~！？♥♡＆]', ' ', text)
@@ -21,7 +21,10 @@ def get_words(text, pos_list=[], form="asitis"):
         morpheme = parts_of_speech(morpheme, pos_list)
         if morpheme == None:
             continue
-        word_list.append(morpheme[inflection_index])
+        word = morpheme[inflection_index]
+        if word in stopwords:
+            continue
+        word_list.append(word)
     return word_list
 
 
