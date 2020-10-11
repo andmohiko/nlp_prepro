@@ -15,6 +15,7 @@ def get_wakati(text):
 def get_words(text, pos_list=[], form="asitis"):
     word_list = []
     inflection_index = inflection(form)
+    text = re.sub('[!-/:-@[-`{-~！？♥♡＆]', ' ', text)
     for chunk in nmc.parse(text).splitlines()[:-1]:
         morpheme = chunk.split('\t')
         morpheme = parts_of_speech(morpheme, pos_list)
