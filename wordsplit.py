@@ -4,8 +4,8 @@ import numpy as np
 import MeCab
 
 
-nmc = MeCab.Tagger('-Ochasen')
-nmw = MeCab.Tagger("-Owakati")
+nmw = MeCab.Tagger('-Owakati -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd')
+nmc = MeCab.Tagger('-Ochasen -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd')
 
 
 def get_wakati(text):
