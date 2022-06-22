@@ -6,7 +6,7 @@ authors = ["andmohiko <andmohiko@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-numpy = "^1.19.4"
+numpy = "^1.22.0"
 pandas = "^1.1.4"
 gensim = "^3.8.3"
 mecab = "^0.996.2"
